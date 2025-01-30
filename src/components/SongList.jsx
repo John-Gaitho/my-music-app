@@ -10,5 +10,14 @@ export default function SongList() {
       .catch(err => console.error("Error fetching songs:", err));
   }, []);
 
-
+  return (
+    <div >
+      <h2 >Songs</h2>
+      <ul >
+        {songs.map(song => (
+          <li key={song.id} >{song.title} - {song.artist}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }
